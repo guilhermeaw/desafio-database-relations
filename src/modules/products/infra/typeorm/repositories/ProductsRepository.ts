@@ -33,7 +33,7 @@ class ProductsRepository implements IProductsRepository {
   }
 
   public async findByName(name: string): Promise<Product | undefined> {
-    const product = this.ormRepository.findOne({
+    const product = await this.ormRepository.findOne({
       where: { name },
     });
 
